@@ -1,2 +1,58 @@
 # TypeScript_Problem_Solving
-A TypeScript practice repository containing a wide range of beginner-to-advanced problem-solving exercises. Each solution is written with clear explanations, strong typing, and modern TypeScript features to help improve coding logic and practical development skills.
+Assignment - 1 ==> Blog 
+
+ব্লগ-১ ঃ TypeScript-এ any, unknown এবং never টাইপের পার্থক্য
+-----------------------------------------------------------
+
+TypeScript শেখার সময় বেশ কনফিউশান তৈরি করে এমন কিছু টাইপ হলো any, unknown, এবং never। এগুলো দেখতে অনেকটা একই রকম মনে হলেও কাজ করার সময় এদের আচরণ একেবারেই আলাদা
+
+==> any, unknown এবং never টাইপের পার্থক্য
+
+১. any টাইপ
+------------
+TypeScript-এ এমন একটি টাইপ যা কোনো ধরনের টাইপ চেক ছাড়াই সবকিছু গ্রহণ করতে পারে। নির্দিষ্টভাবে যখন কোনো ভেরিয়েবল বোঝা যায় না তখন মূলত এইটাইপ টা ইউজ করা হয়ে থাকে । এই পদ্বতিতে ব্যাবহার করা সবসময় নিরাপদ নয় কারন এটা সঠিকভাবে টাইপ চেক করতে পারে না ।
+
+উদাহরণ:
+
+let value: any;
+
+value = 10;
+value = "Hello";
+value = true;
+
+value.toUpperCase();  => এখানে কোনো এরর আসবে না 
+
+২. unknown টাইপ
+----------------
+
+এক্ষেত্রে ভেরিয়েবলের টাইপ পরে নির্বাচন করা হয় । তবে এসময় যেকোনো টাইপের ভেরিয়েবলই ব্যবহার করা এবং সেটি অবশ্যই আগে থেকে টাইপ ডিফাইন করতে হবে
+
+এটি safer any নামে পরিচিত।
+
+উদাহরণ:
+
+let input: unknown;
+
+input = "Hello";
+
+if (typeof input === "string") {
+  console.log(input.toUpperCase());
+}
+
+
+এখানে টাইপ নির্বাচন না করলে টাইপস্ক্রিপট কোনো আউটপুট জেনেরেট করবে না ।
+
+৩. never টাইপ
+--------------
+
+never হলো এমন একটি টাইপ যা কখনোই কোনো মান রিটার্ন করে না। সাধারণত এটি সবসময় ফাংশনে এরর থ্রো করে এবং ইনফিনিটি লুপ তৈরি করে পারে এই টাইপ ।
+
+উদাহরণ:
+
+function throwError(message: string): never {
+  throw new Error(message);
+}
+
+
+এই ফাংশন কখনো স্বাভাবিকভাবে রিটার্ন করবে না, তাই এর টাইপ never।
+
