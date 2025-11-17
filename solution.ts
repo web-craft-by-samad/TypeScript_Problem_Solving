@@ -15,7 +15,7 @@ function formatValue (value: string|number|boolean) {
     }
 }
 
-// 
+
 
 function getLength(value : any) {
     if (typeof value === "string") {
@@ -26,7 +26,7 @@ function getLength(value : any) {
     }
 }
 
-// 
+
 
 
 
@@ -46,7 +46,7 @@ class Person  {
     
 }
 
-// 
+
 
 type Item = {
   title: string;
@@ -58,7 +58,7 @@ function filterByRating(items: Item[]): Item[] {
 }
 
 
-// 
+
 
 interface Users {
     id:number,
@@ -71,7 +71,7 @@ function filterActiveUsers (users: Users[]): Users[] {
   return users.filter((user) => user.isActive === true);
 }
 
-// 
+
 
 interface Book {
     title: string,
@@ -91,7 +91,7 @@ function printBookDetails(book: Book) {
 
 }
 
-// 
+
 
 function getUniqueValues<T extends string | number>(a: T[], b: T[]): T[] {
   const result: T[] = [];
@@ -133,7 +133,7 @@ function getUniqueValues<T extends string | number>(a: T[], b: T[]): T[] {
   return result;
 }
 
-// 
+ 
 
 interface Product {
   name: string;
