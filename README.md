@@ -65,6 +65,7 @@ function throwError(message: string): never {
 TypeScript এর মধ্যে দুইটি গুরুত্ত্বপূর্ণ ধরন হলো union and intersection । বিশেষ করে টাইপের উপর প্রয়োজন অনুযায়ি একাধিক কন্ডিশান চেক করতে এই টাইপ গুলো ব্যবহার করা হয় 
 
 
+
 1) Union টাইপ
 --------------
 
