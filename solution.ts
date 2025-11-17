@@ -40,12 +40,14 @@ class Person  {
   }
 
   getDetails (){
-    return `Name : ${this.name}, Age : ${this.age}`
+    return `'Name : ${this.name}, Age : ${this.age}'`
   }
 
     
 }
 
+const gg = new Person('samad',20)
+console.log(gg.getDetails())
 
 
 type Item = {
