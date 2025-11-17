@@ -1,16 +1,16 @@
 function formatValue (value: string|number|boolean) {
     if(typeof value==='string'){
-        console.log(value.toUpperCase())
+        return(value.toUpperCase())
     }
     else if(typeof value==="number"){
-        console.log(value*10)
+      return(value*10)
     }
     else if(typeof value==='boolean'){
         if(value===true){
-            console.log(false)
+            return(false)
         }
         if(value===false){
-            console.log(true)
+            return(true)
         }
     }
 }
@@ -28,20 +28,35 @@ function getLength(value : any) {
 
 // 
 
-function GetDetails (name:string,age:number) {
-    return `Name : ${name}, Age : ${age}`
+
+
+class Person  {
+  name:string;
+  age:number
+
+  constructor (name:string,age:number){
+    this.name = name,
+    this.age = age
+  }
+
+  getDetails (){
+    return `Name : ${this.name}, Age : ${this.age}`
+  }
+
+    
 }
 
 // 
 
-interface Product {
+type Item = {
   title: string;
   rating: number;
+};
+
+function filterByRating(items: Item[]): Item[] {
+  return items.filter(item => item.rating >= 4);
 }
 
-function filterByRating(newProduct: Product[]): Product[] {
-  return newProduct.filter((item) => item.rating >= 4);
-}
 
 // 
 
@@ -67,11 +82,11 @@ interface Book {
 
 function printBookDetails(book: Book) {
     if (book.isAvailable === true) {
-        console.log(`Title: ${book.title} Author: ${book.author} Published: ${book.publishedYear}$ Available: Yes`)
+        console.log(`Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: Yes`)
     }
 
     else if (book.isAvailable === false) {
-        console.log( `Title: ${book.title} Author: ${book.author} Published: ${book.publishedYear} Available: No`)
+        console.log( `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: No`)
     }
 
 }
@@ -143,5 +158,6 @@ function calculateTotalPrice(products: Product[]): number {
     })
     .reduce((acc, curr) => acc + curr, 0);
 }
+
 
 
